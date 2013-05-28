@@ -1,0 +1,41 @@
+application: typeitonline
+version: 2
+runtime: python
+api_version: 1
+
+handlers:
+- url: /web/css
+  static_dir: web/css
+
+- url: /web/js
+  static_dir: web/js
+
+- url: /web/images
+  static_dir: web/images
+
+- url: /web/resource
+  static_dir: web/resource
+
+- url: /
+  script: welcome.py
+
+- url: /about
+  script: about.py
+
+- url: /faq
+  script: faq.py
+
+- url: /home
+  script: typeitonline.py
+
+- url: /saveDraft
+  script: typeitonline.py
+
+- url: /deleteDraft
+  script: typeitonline.py
+
+- url: /draftList
+  script: draftList.py
+
+- url: /spell
+  script: spell.py

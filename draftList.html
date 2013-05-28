@@ -1,0 +1,56 @@
+<html>
+<head>
+    <link type="text/css" rel="stylesheet" href="/web/css/main.css"/>
+    <title>Type It Online</title>
+
+    <link href='/web/images/favicon.ico' rel="shortcut icon" type="image/x-icon">
+
+<body>
+<div id="container">
+    <div id="headerNew">
+        <div id="header">
+            <div class="floatLeft">
+                <div class="page-header">Type It Online</div>
+            </div>
+
+            <div class="floatRight">
+                <div class="page-login-info">{{name}}</div>
+                <div class="page-login-info" id="quickLinks"><a href="/home">Home</a> | <a href="{{ url }}">{{ url_linktext }}</a></div>
+            </div>
+        </div>
+        <div class="clearBoth"></div>
+    </div>
+    <div id="content">
+        <fieldset class="main">
+            <table class="listTable">
+                <thead>
+                <tr>
+                    <td>Subject</td>
+                    <td>Time</td>
+                    <td>Edit</td>
+                    <td>Delete</td>
+                </tr>
+                </thead>
+                <tbody>
+                {% for draft in drafts %}
+                <tr>
+                    <td>{{ draft.subject|escape }}</td>
+                    <td>{{ draft.date|date:"d/m/Y P" }}</td>
+                    <td><a href="/home?key={{draft.key}}">Edit</a></td>
+                    <td><a href="/deleteDraft?key={{draft.key}}">Delete</a></td>
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </fieldset>
+    </div>
+    <div id="footer">
+        <span id="copyright">
+            <i>
+                &copy; Copyright.
+            </i>
+        </span>
+    </div>
+</div>
+</body>
+</html>
